@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   # active, boolean, NOT NULL
 
   has_one :serial_number
+  has_many :games
 
   validates :email, presence: true, email: true
 

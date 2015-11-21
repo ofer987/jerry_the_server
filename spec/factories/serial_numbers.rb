@@ -3,7 +3,7 @@ FactoryGirl.define do
     name { SecureRandom.hex(2) }
   end
 
-  factory :active_serial_number do
+  factory :active_serial_number, class: SerialNumber do
     user
 
     name { 'af34' }

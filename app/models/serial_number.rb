@@ -1,7 +1,7 @@
 class SerialNumber < ActiveRecord::Base
   # id, integer, PKEY, NOT NULL
-  # name, string, unique index, NOT NULL
   # user_id, integer, foreign_key, NULL
+  # name, string, unique index, NOT NULL
 
   belongs_to :user
 
