@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # id, integer, PKEY, NOT NULL
   # serial_number, string, unique index, NOT NULL
   # email, string, NULL
-  # active, boolean, NOT NULL
+  # password_digest, string, NOT NULL
 
   has_one :serial_number
   has_many :games

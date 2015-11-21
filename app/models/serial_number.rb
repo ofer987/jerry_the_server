@@ -5,6 +5,8 @@ class SerialNumber < ActiveRecord::Base
 
   belongs_to :user
 
+  validates :name, presence: true, uniqueness: true
+
   scope :active, -> { where.not(user: nil) }
   scope :inactive, -> { where(user: nil) }
 

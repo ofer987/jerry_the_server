@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @command.name
+p
+  strong Data:
+  = @command.data
+
+= link_to 'Edit', edit_command_path(@command)
+'|
+= link_to 'Back', commands_path
