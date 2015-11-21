@@ -1,0 +1,19 @@
+h1 Listing sessions
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @sessions.each do |session|
+      tr
+        td = link_to 'Show', session
+        td = link_to 'Edit', edit_session_path(session)
+        td = link_to 'Destroy', session, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Session', new_session_path

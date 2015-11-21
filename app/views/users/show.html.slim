@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Serial number:
+  = @user.serial_number
+p
+  strong Email:
+  = @user.email
+p
+  strong Active:
+  = @user.active
+
+= link_to 'Edit', edit_user_path(@user)
+'|
+= link_to 'Back', users_path

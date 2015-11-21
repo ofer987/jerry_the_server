@@ -30,7 +30,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'slim-rails'
+gem 'email_validator'
+gem 'bcrypt'
+
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+
+  gem 'guard'
+  gem 'guard-rspec', require: false
+
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'awesome_print'
+
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
