@@ -1,6 +1,8 @@
 FactoryGirl.define do
-  factory :game do
-    user
+  factory :instruction do
+    game
+    command
+
     name 'Hide and Seek'
   end
 end

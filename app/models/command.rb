@@ -6,6 +6,9 @@ class Command < ActiveRecord::Base
   has_many :instructions
   has_many :games, through: :instructions
 
+  has_many :instructions
+  has_many :games, through: :instructions
+
   validates :name, presence: true, uniqueness: true
   validates :data, presence: true
 end

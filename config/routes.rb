@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :commands
-  resources :games
-  resources :users
+
+  resources :users do
+    resources :games do
+      resources :instructions
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :statistics
 

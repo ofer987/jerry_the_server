@@ -5,5 +5,8 @@ class Game < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :instructions
+  has_many :commands, through: :instructions
+
   validates :name, presence: true, uniqueness: true
 end
