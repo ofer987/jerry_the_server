@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'test/move'
+
   resources :commands
 
   resources :users do
