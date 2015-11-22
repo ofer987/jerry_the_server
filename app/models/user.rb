@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   # password_digest, string, NOT NULL
 
   has_one :serial_number
+  has_one :active_game
   has_many :games
 
   validates :email, presence: true, email: true

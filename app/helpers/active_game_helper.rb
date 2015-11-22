@@ -1,0 +1,2 @@
+module ActiveGameHelper
+end
