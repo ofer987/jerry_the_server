@@ -26,6 +26,6 @@ class SessionsController < ApplicationController
   private
 
   def find_by_email(email)
-    User.active.where(email: email).first
+    User.where(email: email).first
   end
 end

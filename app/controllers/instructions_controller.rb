@@ -7,6 +7,13 @@ class InstructionsController < ApplicationController
   # GET /instructions.json
   def index
     @instructions = @game.instructions.all
+
+    respond_to do |format|
+      format.html { render action: :index }
+      format.json do
+        render json: { instructions: @instructions.map { |i| i.command.data } }
+      end
+    end
   end
 
   # GET /instructions/1
@@ -16,7 +23,7 @@ class InstructionsController < ApplicationController
 
   # GET /instructions/new
   def new
-    @instruction = Instruction.new
+    @instruction = @game.instructions.build
   end
 
   # GET /instructions/1/edit

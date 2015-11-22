@@ -1,0 +1,15 @@
+doctype html
+
+html
+  head
+    title Jerry
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+body
+  - if @logged_user
+    = link_to 'Games', user_games_path(@logged_user)
+    span &nbsp;
+    = link_to 'Commands', commands_path
+  = yield

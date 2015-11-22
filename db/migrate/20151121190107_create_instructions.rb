@@ -3,12 +3,11 @@ class CreateInstructions < ActiveRecord::Migration
     create_table :instructions do |t|
       t.references :game, index: true, foreign_key: true, null: false
       t.references :command, index: true, foreign_key: true, null: false
-      t.string :name, null: false
+      t.string :name, null: true
       t.text :parameters, null: true
+      t.integer :precedence, null: false, default: 0
 
       t.timestamps null: false
-
-      t.index :name, unique: true
     end
   end
 end

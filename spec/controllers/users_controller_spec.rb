@@ -13,7 +13,7 @@ RSpec.describe UsersController, type: :controller do
   let(:valid_attributes) do
     {
       user: {
-        email: 'dan@gmail.com',
+        email: 'ron@gmail.com',
         password: 'foo',
         password_confirmation: 'foo'
       },

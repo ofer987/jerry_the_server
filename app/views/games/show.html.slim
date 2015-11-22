@@ -2,11 +2,15 @@ p#notice = notice
 
 p
   strong User:
-  = @game.user
+  = @user.email
 p
   strong Name:
   = @game.name
 
-= link_to 'Edit', edit_game_path(@game)
+br
+== render partial: 'instructions/index', locals: { instructions: @game.instructions }
+br
+
+= link_to 'Edit', edit_user_game_path(@user, @game)
 '|
-= link_to 'Back', games_path
+= link_to 'Back', user_games_path(@user)

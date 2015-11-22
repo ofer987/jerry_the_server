@@ -1,12 +1,18 @@
 p#notice = notice
 
 p
-  strong Game:
-  = @instruction.game
+  strong Game:&nbsp;
+  = @instruction.game.name
 p
-  strong Command:
-  = @instruction.command
+  strong Command:&nbsp;
+  = @instruction.command.name
+p
+  strong Data:&nbsp;
+  = @instruction.command.data
+p
+  strong Precedence:&nbsp;
+  = @instruction.precedence
 
-= link_to 'Edit', edit_instruction_path(@instruction)
-'|
-= link_to 'Back', instructions_path
+= link_to 'Edit', edit_user_game_instruction_path(@user, @game, @instruction)
+'&nbsp;|
+= link_to 'Back', user_game_instructions_path(@user, @game)

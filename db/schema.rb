@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121234929) do
+ActiveRecord::Schema.define(version: 20151121190107) do
 
   create_table "commands", force: :cascade do |t|
     t.string   "name",       null: false
@@ -35,16 +35,15 @@ ActiveRecord::Schema.define(version: 20151121234929) do
   create_table "instructions", force: :cascade do |t|
     t.integer  "game_id",                null: false
     t.integer  "command_id",             null: false
-    t.string   "name",                   null: false
+    t.string   "name"
     t.text     "parameters"
+    t.integer  "precedence", default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.integer  "precedence", default: 0, null: false
   end
 
   add_index "instructions", ["command_id"], name: "index_instructions_on_command_id"
   add_index "instructions", ["game_id"], name: "index_instructions_on_game_id"
-  add_index "instructions", ["name"], name: "index_instructions_on_name", unique: true
 
   create_table "serial_numbers", force: :cascade do |t|
     t.integer  "user_id"

@@ -7,12 +7,15 @@
           li = message
 
   .field
-    = f.label :serial_number
-    = f.text_field :serial_number
+    = label_tag :serial_number_name, 'Serial Number'
+    = text_field_tag :serial_number_name
   .field
     = f.label :email
     = f.text_field :email
   .field
-    = f.label :active
-    = f.check_box :active
+    = f.label :password
+    = f.text_field :password
+  .field
+    = f.label :password_confirmation
+    = f.text_field :password_confirmation
   .actions = f.submit

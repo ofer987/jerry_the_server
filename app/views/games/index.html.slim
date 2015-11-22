@@ -12,12 +12,12 @@ table
   tbody
     - @games.each do |game|
       tr
-        td = game.user
+        td = game.user.email
         td = game.name
-        td = link_to 'Show', game
-        td = link_to 'Edit', edit_game_path(game)
-        td = link_to 'Destroy', game, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', [@user, game]
+        td = link_to 'Edit', edit_user_game_path(@user, game)
+        td = link_to 'Destroy', [@user, game], data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Game', new_game_path
+= link_to 'New Game', new_user_game_path(@user)

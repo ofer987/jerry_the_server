@@ -5,7 +5,6 @@ table
     tr
       th Serial number
       th Email
-      th Active
       th
       th
       th
@@ -13,9 +12,8 @@ table
   tbody
     - @users.each do |user|
       tr
-        td = user.serial_number
+        td = user.serial_number.name
         td = user.email
-        td = user.active
         td = link_to 'Show', user
         td = link_to 'Edit', edit_user_path(user)
         td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete

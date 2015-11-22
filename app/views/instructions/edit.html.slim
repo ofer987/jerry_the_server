@@ -2,7 +2,7 @@ h1 Editing instruction
 
 == render 'form'
 
-= link_to 'Show', @instruction
-'|
-= link_to 'Back', instructions_path
+= link_to 'Show', [@user, @game, @instruction]
+'&nbsp;|
+= link_to 'Back', user_game_instructions_path(@user, @game)
 

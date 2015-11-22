@@ -1,0 +1,28 @@
+/Locals:
+/instructions
+
+h1 Listing instructions
+
+table
+  thead
+    tr
+      th Game
+      th Precedence
+      th Command
+      th
+      th
+      th
+
+  tbody
+    - instructions.order(:precedence).each do |instruction|
+      tr
+        td = instruction.game.name
+        td = instruction.precedence
+        td = instruction.command.name
+        td = link_to 'Show', [@user, @game, instruction]
+        td = link_to 'Edit', edit_user_game_instruction_path(@user, @game, instruction)
+        td = link_to 'Destroy', [@user, @game, instruction], data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Instruction', new_user_game_instruction_path(@user, @game)
